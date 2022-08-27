@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Reminders</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-secondary">
+      <div class="d-flex justify-content-between w-100">
+        <div class="container-fluid justify-content-start">
+          <a href="/" class="btn btn-light fw-semibold">Back</a>
+        </div>
+        <div class="container-fluid d-flex justify-content-end">
+          <form action="/notes/<%= getId._id %>/update " method="GET">
+            <button class="btn btn-primary fw-semibold">Update</button>
+          </form>
+
+          <form
+            action="/notes/<%= getId._id %>?_method=DELETE"
+            method="POST"
+            class="mx-1"
+          >
+            <button class="btn btn-danger fw-semibold mx-1">Delete</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="p-3">
+      <div class="card p-2 bg-light mx-auto" style="width: 28rem">
+        <div class="card-body">
+          <h5 class="card-title"><%= getId.title %></h5>
+          <p class="card-text"><%= getId.reminder %></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
